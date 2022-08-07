@@ -17,6 +17,9 @@ final class UserLog implements UserLogInterface
     #[ORM\Column]
     private int $id;
 
+    #[ORM\Column(name: 'created', type: 'datetime_immutable')]
+    private \DateTimeImmutable $created;
+
     public function __construct(
         #[ORM\Column(name: 'user_id', type: 'integer')]
         private int $userId,
@@ -24,7 +27,9 @@ final class UserLog implements UserLogInterface
         private string $type,
         #[ORM\Column(name: 'log', type: 'json')]
         private array $log
-    ) {}
+    ) {
+        $this->created = new \DateTimeImmutable();
+    }
 
     public function getId(): int
     {
@@ -34,6 +39,11 @@ final class UserLog implements UserLogInterface
     public function getUserId(): int
     {
         return $this->userId;
+    }
+
+    public function getCreated(): \DateTimeImmutable
+    {
+        return $this->created;
     }
 
     public function getType(): string
