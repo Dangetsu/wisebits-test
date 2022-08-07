@@ -1,0 +1,14 @@
+App\Core\Application\Query\User\UserDTO:
+  attributes:
+    id:
+      groups: ['user_view']
+    name:
+      groups: ['user_view', 'user_create']
+    email:
+      groups: ['user_view', 'user_create', 'user_update']
+    created:
+      groups: ['user_view']
+    deleted:
+      groups: ['user_view']
+    notes:
+      groups: ['user_view', 'user_create', 'user_update']

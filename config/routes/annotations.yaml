@@ -1,0 +1,3 @@
+core_controllers:
+    resource: ../../src/Core/Ports/Rest/
+    type: annotation
