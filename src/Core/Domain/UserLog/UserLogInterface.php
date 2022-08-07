@@ -11,6 +11,8 @@ interface UserLogInterface extends EntityInterface
 
     public function getUserId(): int;
 
+    public function getCreated(): \DateTimeImmutable;
+
     public function getType(): string;
 
     public function getLog(): array;
